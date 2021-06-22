@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- header -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xyz.cp74</groupId>
+  <artifactId>utils</artifactId>
+  <name>Utils collection</name>
+  <version>0.1</version>
+  <description>Collection of utils for Java</description>
+  <url>https://github.com/cyberp/cpu</url>
+  <packaging>jar</packaging>
+  
+  <!-- license informations -->
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+  	</license>
+  </licenses>
+  
+  <!-- developers -->
+  <developers>
+    <developer>
+      <id>cp</id>
+      <name>Christian Paul</name>
+      <email>info@cp74.xyz</email>
+    </developer>
+  </developers>
+ 
+  <!-- properties -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <jackson.version>2.12.2</jackson.version>
+    <tinylog.version>2.3.1</tinylog.version>
+  </properties>
+  
+  <!-- github scm -->
+  <scm>
+    <connection>scm:git:https://github.com/cyberp/cpu.git</connection>
+    <developerConnection>scm:git:https://github.com/cyberp/cpu.git</developerConnection>
+    <url>https://github.com/cyberp/cpu</url>
+  </scm>
+
+  <!-- plugins -->
+  <build>
+    <plugins>
+    
+      <!-- generate sources jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- generate javadoc jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <doclint>all,-missing</doclint>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>      
+      
+    </plugins>
+  </build>
+  
+  <!-- dependencies -->
+  <dependencies>
+  
+    <!-- tinylog 2 -->
+	<dependency>
+		<groupId>org.tinylog</groupId>
+		<artifactId>tinylog-api</artifactId>
+		<version>${tinylog.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.tinylog</groupId>
+		<artifactId>tinylog-impl</artifactId>
+		<version>${tinylog.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.tinylog</groupId>
+	    <artifactId>slf4j-tinylog</artifactId>
+	    <version>${tinylog.version}</version>
+	</dependency>
+  
+  	<!-- jackson -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+  	<dependency>
+	    <groupId>com.fasterxml.jackson.dataformat</groupId>
+	    <artifactId>jackson-dataformat-yaml</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	
+	
+  
+  </dependencies>
+
+</project>

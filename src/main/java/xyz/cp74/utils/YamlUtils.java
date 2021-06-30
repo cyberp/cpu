@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Map;
 import org.tinylog.Logger;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
@@ -80,6 +81,8 @@ public class YamlUtils {
 		Object o = null;
         YAMLFactory yamlFac = new YAMLFactory();
 		ObjectMapper mapper = new ObjectMapper(yamlFac);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+        mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
 		try {
 			File f = new File(filename);
 			o = mapper.readValue(f, clazz);

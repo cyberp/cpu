@@ -6,19 +6,30 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * CommandLineParameter
+ * 
+ * CommandLineUtils
+ * 
+ * Parse command line arguments
  * 
  * @author Christian Paul
  *
  */
-public class CommandLineParameter {
+public class CommandLineUtils {
 
+	/**
+	 * Clean @param value from quotation marks
+	 * @return String 
+	 */
 	private static String clean(String value) {
 		if (value.startsWith("\"") && value.endsWith("\""))
 			value = value.substring(1, value.length()-1);
 		return value;
 	}
 	
+	/**
+	 * Get @param args from command line
+	 * @return Map 
+	 */
 	public static Map<String, String> get(String[] args) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (args!=null) {

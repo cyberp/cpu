@@ -11,6 +11,9 @@ import java.util.List;
 import org.tinylog.Logger;
 
 /**
+ * 
+ * FileUtils
+ * 
  * Read and write files.
  * 
  * @author Christian Paul

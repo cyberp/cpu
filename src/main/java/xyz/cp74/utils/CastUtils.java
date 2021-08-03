@@ -7,13 +7,15 @@ import java.util.List;
 import java.util.Set;
 
 /**
- *
+ * 
+ * CastUtils
+ * 
  * Cast different things to different things
  * 
  * @author Christian Paul
  *
  */
-public class Cast {
+public class CastUtils {
 
 	/**
 	 * Cast object to integer
@@ -122,14 +124,14 @@ public class Cast {
 		// object is list
 		if (o instanceof List<?>)
 			for (Object oo: (List<?>)o)
-				list.add(Cast.toString(oo));
+				list.add(CastUtils.toString(oo));
 		// object is collection
 		else if (o instanceof Collection<?>)
 			for (Object oo: (Collection<?>)o)
-				list.add(Cast.toString(oo));
+				list.add(CastUtils.toString(oo));
 		// object is primitive data
 		else
-			list.add(Cast.toString(o));
+			list.add(CastUtils.toString(o));
 		
 		return list;
 	}
@@ -144,14 +146,14 @@ public class Cast {
 		// object is list
 		if (o instanceof List<?>)
 			for (Object oo: (List<?>)o)
-				set.add(Cast.toString(oo));
+				set.add(CastUtils.toString(oo));
 		// object is collection
 		else if (o instanceof Collection<?>)
 			for (Object oo: (Collection<?>)o)
-				set.add(Cast.toString(oo));
+				set.add(CastUtils.toString(oo));
 		// object is primitive data
 		else
-			set.add(Cast.toString(o));
+			set.add(CastUtils.toString(o));
 		
 		return set;
 	}

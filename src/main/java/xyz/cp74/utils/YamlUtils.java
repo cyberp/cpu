@@ -11,7 +11,8 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 
 /**
  * 
- * YamlUtils.
+ * YamlUtils
+ * 
  * Read and Write YAML files.
  * 
  * @author Christian Paul
@@ -46,6 +47,7 @@ public class YamlUtils {
 		YAMLFactory yamlFac = new YAMLFactory();
 		yamlFac.enable(YAMLGenerator.Feature.MINIMIZE_QUOTES);
 		yamlFac.disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER);
+		yamlFac.disable(YAMLGenerator.Feature.SPLIT_LINES);
 		ObjectMapper mapper = new ObjectMapper(yamlFac);
 		try {
 			File f = new File(filename);
@@ -64,6 +66,7 @@ public class YamlUtils {
 		YAMLFactory yamlFac = new YAMLFactory();
 		yamlFac.enable(YAMLGenerator.Feature.MINIMIZE_QUOTES);
 		yamlFac.disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER);
+		yamlFac.disable(YAMLGenerator.Feature.SPLIT_LINES);
 		ObjectMapper mapper = new ObjectMapper(yamlFac);
 		try {
 			return mapper.writeValueAsString(object);
@@ -90,4 +93,21 @@ public class YamlUtils {
 		return o;
 	}
 
+	/**
+     * Read YAML string and create object
+     * @param content
+     * @param clazz
+     * @return
+     */
+	public static Object readString(String content, Class<?> clazz) {
+		Object o = null;
+        YAMLFactory yamlFac = new YAMLFactory();
+		ObjectMapper mapper = new ObjectMapper(yamlFac);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+        mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+		try {
+			o = mapper.readValue(content, clazz);
+		} catch (Exception e) { Logger.error(e, "file not readable"); }
+		return o;
+	}
 }

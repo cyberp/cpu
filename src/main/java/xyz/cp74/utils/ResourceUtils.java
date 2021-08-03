@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
 /**
+ * 
+ * ResourceUtils
+ * 
  * Read resources
  * 
  * @author Christian Paul

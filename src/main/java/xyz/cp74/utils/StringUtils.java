@@ -1,6 +1,9 @@
 package xyz.cp74.utils;
 
 /**
+ * 
+ * StringUtils
+ * 
  * Utils for manipulating strings
  * 
  * @author Christian Paul

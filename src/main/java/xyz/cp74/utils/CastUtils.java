@@ -70,7 +70,7 @@ public class CastUtils {
 	/**
 	 * Cast object to double
 	 * @param o object to cast
-	 * @return
+	 * @return double
 	 */
 	public static double toDouble(Object o) {
 		return toDouble(o, 0.0);
@@ -80,7 +80,7 @@ public class CastUtils {
 	 * Cast object to double
 	 * @param o object to cast
 	 * @param defaultValue default reurn value, if object is not castable
-	 * @return
+	 * @return double
 	 */
 	public static double toDouble(Object o, double defaultValue) {
 		if (o!=null) {

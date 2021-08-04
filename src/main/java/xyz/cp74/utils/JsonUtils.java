@@ -17,9 +17,7 @@ public class JsonUtils {
 
     
 	/**
-	 * Write object to JSON String
-	 * @param object
-	 * @return JSON 
+	 * Write @param object to @return JSON
 	 */
 	public static String write(Object data) {
 		if (data!=null) {

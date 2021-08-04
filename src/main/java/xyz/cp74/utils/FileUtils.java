@@ -22,9 +22,7 @@ import org.tinylog.Logger;
 public class FileUtils {
 
 	/**
-	 * Write file
-	 * @param file to write
-	 * @param data to write
+	 * Write @param data to @param file 
 	 * @return true, if successfull
 	 */
 	public static boolean write(String file, String data) {
@@ -43,19 +41,16 @@ public class FileUtils {
 	}
 	
 	/**
-	 * Read file to string
-	 * @param file
-	 * @return
+	 * Read @param file to string
+	 * @return file as String
 	 */
 	public static String read(String file) {
 		return read(file, Charset.forName("UTF-8"));
 	}
 	
 	/**
-	 * Read file to string
-	 * @param file
-	 * @param charset
-	 * @return
+	 * Read @param file with @param charset to string
+	 * @return file as String
 	 */
 	public static String read(String file, Charset charset) {
 		String s = null;
@@ -71,9 +66,8 @@ public class FileUtils {
 	}
 	
 	/**
-	 * Get extension of a filename
-	 * @param file
-	 * @return
+	 * Get extension of @param file
+	 * @return file extension
 	 */
 	public static String getExtension(String file) {
 		if (file!=null) {
@@ -85,9 +79,8 @@ public class FileUtils {
 	}
 	
 	/**
-	 * Get a list of filenames from a given path
-	 * @param path
-	 * @return
+	 * Get a list of filenames from a given @param path
+	 * @return List of files 
 	 */
 	public static List<String> getFiles(String path) {
 	    List<String> fileList = new ArrayList<String>();

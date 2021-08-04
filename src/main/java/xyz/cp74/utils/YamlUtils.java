@@ -22,9 +22,7 @@ public class YamlUtils {
 
 
     /**
-     * Read YAML file as map
-     * @param filename
-     * @return
+     * Read YAML file with @param filename and @return map
      */
     public static Map<String, Object> readMap(String filename) {
 		Map<String, Object> o = null;
@@ -38,10 +36,8 @@ public class YamlUtils {
     }
 
 	/**
-	 * Write object to YAML file
-	 * @param object
-	 * @param filename
-	 * @return
+	 * Write @param object to YAML file with @param filename
+	 * @return File
 	 */
 	public static File write(Object object, String filename) {
 		YAMLFactory yamlFac = new YAMLFactory();
@@ -58,9 +54,8 @@ public class YamlUtils {
 	}
     
 	/**
-	 * Write object to YAML String
-	 * @param object
-	 * @return
+	 * Write @param object to YAML file to string
+	 * @return String
 	 */
 	public static String write(Object object) {
 		YAMLFactory yamlFac = new YAMLFactory();
@@ -75,10 +70,8 @@ public class YamlUtils {
 	}
 
 	/**
-     * Read YAML file and create object
-     * @param filename
-     * @param clazz
-     * @return
+     * Read YAML file with @param filename and create object of @param clazz
+     * @return Object
      */
 	public static Object read(String filename, Class<?> clazz) {
 		Object o = null;
@@ -94,10 +87,8 @@ public class YamlUtils {
 	}
 
 	/**
-     * Read YAML string and create object
-     * @param content
-     * @param clazz
-     * @return
+     * Read YAML @param content from string and create object of @param clazz
+     * @return Object
      */
 	public static Object readString(String content, Class<?> clazz) {
 		Object o = null;

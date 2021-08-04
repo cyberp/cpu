@@ -12,9 +12,8 @@ package xyz.cp74.utils;
 public class StringUtils {
 
 	/**
-	 * Remove last char of a string
-	 * @param s 
-	 * @return 
+	 * Remove last char of a string @param s 
+	 * @return tailed string
 	 */
 	public static String removeLastChar(String s) {
 		if (s==null || s.length()==0)

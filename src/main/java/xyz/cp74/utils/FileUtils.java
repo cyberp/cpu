@@ -79,6 +79,20 @@ public class FileUtils {
 	}
 	
 	/**
+	 * Check if extension of @param file has extension @param ext
+	 * @return true, if extension is found
+	 */
+	public static boolean hasExtension(String file, String... ext) {
+		String x = getExtension(file);
+		if (x!=null) {
+			for (String xx: ext)
+				if (x.equals(xx))
+					return true;
+		}
+		return false;
+	}
+	
+	/**
 	 * Get a list of filenames from a given @param path
 	 * @return List of files 
 	 */
